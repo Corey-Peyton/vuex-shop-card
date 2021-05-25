@@ -1,5 +1,5 @@
 # shop-card-vuex
-
+I created this project to learn how to use vue.js. The project is similar to the shopping cart in the e-commerce web application.
 ## Project setup
 ```
 npm install
