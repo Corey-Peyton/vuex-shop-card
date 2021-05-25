@@ -26,7 +26,7 @@ export const store = new Vuex.Store({
             const itemIndex = card.findIndex(item => item.id === product.id);
             card.splice(itemIndex, 1);
         },
-        clearAll({state}) {
+        clearAll(state) {
             state.card = [];
         }
     },
@@ -34,7 +34,7 @@ export const store = new Vuex.Store({
         totalAmount(state) {
             let amount = 0;
             state.card.map(item => {
-                amaount += item.price * item.count;
+                amount += item.price * item.count;
             });
             return amount;
         }

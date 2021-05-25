@@ -4,12 +4,12 @@
       <ul>
         <li v-for="item in card" :key="item.id">
         <span class="item-name">
-            {{item.anem}}
+            {{item.name}}
             <button @click="deductItemCount(item)">-1</button>
             <button @click="removeItem(item)">X</button>
         </span>
         <span class="item-count">
-            {{item.count}} x {{item.rpice}}
+            {{item.count}} x {{item.price}}
         </span>
         <span class="item-amount">
             {{formatCurrency(item.count*item.price)}}

@@ -2,9 +2,9 @@
   <div id="products">
       <h2>Products</h2>
       <div class="notification" v-for="(info, key) in infos" :key="key">
-          
+          {{info}}
       </div>
-      <table :class="{product : products.lengyh !== 0}">
+      <table :class="{products : products.lengyh !== 0}">
           <tr>
               <th>Product Name</th>
               <th>Price</th>
@@ -14,7 +14,7 @@
               <td>{{product.name}}</td>
               <td>{{product.price}}</td>
               <td>
-                  <label for="">
+                  <label>
                       <input type="number" :id="product.id" value="0">
                   </label>
               </td>
@@ -44,14 +44,14 @@ export default {
               const count = document.getElementById(product.id).value;
               product = {...product, count};
               this.$store.commit('addToCard', product);
-              const info = product.name + 'added to card';
+              const info = product.name + '  added to card';
               this.infos.push(info);
               setTimeout(() => {
                   document.getElementById(product.id).value = 0;
                   this.infos.splice(this.infos.indexOf(info), 1);
               }, 3000);
           } else {
-              const info = product.name + 'please enter a valid input';
+              const info = product.name + '  please enter a valid input';
               this.infos.push(info);
               setTimeout(() => {
                   document.getElementById(product.id).value = 0;
@@ -79,7 +79,8 @@ export default {
 }
 .notification {
     background-color: #ddd;
-    padding: 400px;
+    padding: 20px;
+    width: 400px;
     margin-bottom: 20px;
     border-radius: 25px;
     font-size: 24px;
